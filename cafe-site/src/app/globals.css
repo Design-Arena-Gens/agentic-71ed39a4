@@ -1,0 +1,336 @@
+:root {
+  --color-bg: #08090d;
+  --color-bg-alt: #10141f;
+  --color-primary: #ff9f1c;
+  --color-primary-soft: rgba(255, 159, 28, 0.12);
+  --color-text: #f6f7f8;
+  --color-text-muted: #c0c5d6;
+  --color-accent: #ffd8a9;
+  --font-size-base: clamp(16px, 1.1vw, 18px);
+  --max-width: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    Arial, sans-serif;
+  font-weight: 400;
+  color: var(--color-text);
+  background: radial-gradient(circle at top left, #1c1f2b, #08090d 55%);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+a {
+  color: inherit;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding: 0 1.5rem 5rem;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  gap: 3rem;
+  padding: 6rem 1.5rem 4rem;
+  border-radius: 36px;
+  background: linear-gradient(135deg, rgba(16, 20, 31, 0.95), rgba(26, 31, 44, 0.85));
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -30%;
+  width: 60%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(255, 159, 28, 0.18), transparent 65%);
+  filter: blur(2px);
+  z-index: -1;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 159, 28, 0.4);
+  background: rgba(255, 159, 28, 0.08);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  line-height: 1.1;
+}
+
+.hero-description {
+  max-width: 42ch;
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #140d03;
+  box-shadow: 0 20px 45px rgba(255, 159, 28, 0.25);
+}
+
+.btn-secondary {
+  background: transparent;
+  border-color: rgba(255, 159, 28, 0.35);
+  color: var(--color-accent);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 25px 55px rgba(255, 159, 28, 0.32);
+}
+
+.tagline {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  color: rgba(246, 247, 248, 0.7);
+  font-size: 0.95rem;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.canvas-wrapper {
+  position: relative;
+  min-height: 340px;
+  border-radius: 28px;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 70%);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.coffee-scene,
+.coffee-scene canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.canvas-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.split {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.panel {
+  padding: 2.5rem;
+  border-radius: 28px;
+  background: linear-gradient(160deg, rgba(15, 18, 26, 0.8), rgba(12, 14, 20, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+}
+
+.panel h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.panel p {
+  color: var(--color-text-muted);
+}
+
+.feature-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  padding: 1.5rem;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(14, 16, 22, 0.9);
+  display: grid;
+  gap: 0.8rem;
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+}
+
+.menu-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.menu-item {
+  display: grid;
+  gap: 0.4rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+  padding-bottom: 1.2rem;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.menu-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.menu-item-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.menu-item-price {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.testimonial-grid {
+  display: grid;
+  gap: 1.3rem;
+  margin-top: 2rem;
+}
+
+.testimonial-card {
+  padding: 1.5rem;
+  border-radius: 18px;
+  background: rgba(12, 15, 22, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  display: grid;
+  gap: 0.9rem;
+}
+
+.testimonial-card strong {
+  font-family: var(--font-display);
+  color: var(--color-accent);
+}
+
+.footer {
+  margin-top: 4rem;
+  padding: 2rem 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(246, 247, 248, 0.6);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.footer span {
+  color: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+  }
+
+  .hero-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
+  .split {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding-top: 5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 8vw, 3.4rem);
+  }
+
+  main {
+    gap: 4rem;
+  }
+}
